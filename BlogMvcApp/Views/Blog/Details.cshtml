@@ -1,0 +1,44 @@
+﻿@model BlogMvcApp.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h1>@Model.Baslik</h1>
+<hr />
+<p>
+    <span class="glyphicon glyphicon-time"></span>
+    @Model.EklenmeTarihi
+</p>
+<hr />
+<img class="img-responsive" src="http://placehold.it/900x300" alt="" />
+<hr />
+<blockquote>
+    <p>
+        @Model.Aciklama
+    </p>
+</blockquote>
+<p>
+    @Model.Icerik
+</p>
+
+<div class="comment">
+    <div class="well">
+        <h4> Leave a Comment</h4>
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+@section SagKolon{
+    @Html.Partial("Search")
+    @{Html.RenderAction("KategoriListesi", "Category");}
+}
+
+
+

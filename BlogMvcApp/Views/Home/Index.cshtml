@@ -1,0 +1,13 @@
+﻿@model IEnumerable<BlogMvcApp.Models.BlogModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@Html.Partial("BlogListele", Model)
+@section SagKolon  {
+
+    @Html.Partial("Search")
+    @{Html.RenderAction("KategoriListesi", "Category");}
+
+}
